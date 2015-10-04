@@ -1,0 +1,42 @@
+-   fields: {group_name: "\u03BC's", name: "\u9AD8\u5742 \u7A42\u4E43\u679C"}
+    model: draw_member.member
+    pk: 2
+-   fields: {group_name: "\u03BC's", name: "\u7D62\u702C \u7D75\u91CC"}
+    model: draw_member.member
+    pk: 3
+-   fields: {group_name: "\u03BC's", name: "\u5357 \u3053\u3068\u308A"}
+    model: draw_member.member
+    pk: 4
+-   fields: {group_name: "\u03BC's", name: "\u5712\u7530 \u6D77\u672A"}
+    model: draw_member.member
+    pk: 5
+-   fields: {group_name: "\u03BC's", name: "\u661F\u7A7A \u51DB"}
+    model: draw_member.member
+    pk: 6
+-   fields: {group_name: "\u03BC's", name: "\u897F\u6728\u91CE \u771F\u59EB"}
+    model: draw_member.member
+    pk: 7
+-   fields: {group_name: "\u03BC's", name: "\u6771\u689D \u5E0C"}
+    model: draw_member.member
+    pk: 8
+-   fields: {group_name: "\u03BC's", name: "\u5C0F\u6CC9 \u82B1\u967D"}
+    model: draw_member.member
+    pk: 9
+-   fields: {group_name: "\u03BC's", name: "\u77E2\u6FA4 \u306B\u3053"}
+    model: draw_member.member
+    pk: 10
+-   fields: {group_name: K-ON!, name: "\u5E73\u6CA2 \u552F"}
+    model: draw_member.member
+    pk: 11
+-   fields: {group_name: K-ON!, name: "\u79CB\u5C71 \u6FAA"}
+    model: draw_member.member
+    pk: 12
+-   fields: {group_name: K-ON!, name: "\u7530\u4E95\u4E2D \u5F8B"}
+    model: draw_member.member
+    pk: 13
+-   fields: {group_name: K-ON!, name: "\u7434\u5439 \u7D2C"}
+    model: draw_member.member
+    pk: 14
+-   fields: {group_name: K-ON!, name: "\u4E2D\u91CE \u6893"}
+    model: draw_member.member
+    pk: 15
