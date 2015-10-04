@@ -16,14 +16,16 @@ def home(request):
 @require_GET
 def draw(request):
     # Retrieve all related members
-    group_name = request.GET.get('group_name', 'ALL')
-    if group_name == 'ALL':
-        valid_members = Member.objects.all()
+    form = DrawForm(request.GET)
+    if form.is_valid():
+        group_name = form.cleaned_data['group']
+        if group_name == 'ALL':
+            valid_members = Member.objects.all()
+        else:
+            valid_members = Member.objects.filter(group_name=group_name)
     else:
-        valid_members = Member.objects.filter(group_name=group_name)
-    # Raise 404 if no members are found given the group name
-    if not valid_members.exists():
-        raise Http404("No member in group '%s'" % group_name)
+        # Raise 404 if no members are found given the group name
+        raise Http404("No member in group '%s'" % form.data.get('group', ''))
     # Lucky draw
     lucky_member = random.choice(valid_members)
     # Update history
