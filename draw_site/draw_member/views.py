@@ -1,10 +1,11 @@
 import random
 from django.shortcuts import render
-from django.http import HttpResponse, Http404
+from django.http import Http404  # Http404
 from django.views.decorators.http import require_GET
-from django.utils.timezone import activate
+# from django.utils.timezone import activate
 from .models import Member, History
 from .forms import DrawForm
+
 
 def home(request):
     # return HttpResponse("<p>Hello World!</p>")
@@ -12,6 +13,7 @@ def home(request):
     return render(request, 'draw_member/home.html', {
         'form': form
     })
+
 
 @require_GET
 def draw(request):
