@@ -32,7 +32,10 @@ def draw(request):
     draw_history = History(member=lucky_member)
     draw_history.save()
 
-    return HttpResponse("<p>{0.name}（團體：{0.group_name}）</p>".format(lucky_member))
+    # return HttpResponse("<p>{0.name}（團體：{0.group_name}）</p>".format(lucky_member))
+    return render(request, 'draw_member/draw.html', {
+        'lucky_member': lucky_member
+    })
 
 
 def history(request):
