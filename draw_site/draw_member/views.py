@@ -42,7 +42,7 @@ def draw(request):
 
 def history(request):
     # activate('Asia/Taipei')
-    recent_draws = History.objects.order_by('-time').all()[:10]
+    recent_draws = History.objects.recent(10)
     return render(request, 'draw_member/history.html', {
         'recent_histories': recent_draws,
     })
