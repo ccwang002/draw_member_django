@@ -2,7 +2,7 @@ from django import forms
 from .models import Member
 
 def member_group_choices():
-    valid_groups = Member.groups.unique()  # Members.unique_groups()
+    valid_groups = Member.objects.unique_groups()
     choices = []
     for grp in valid_groups:
         choices.append((grp, grp))

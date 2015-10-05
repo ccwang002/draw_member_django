@@ -2,30 +2,19 @@ from django.db import models
 from django.utils.timezone import now
 
 
-class MemberGroupManager(models.Manager):
+class MemberQuerySet(models.QuerySet):
 
-    def get_queryset(self):
-        return super().get_queryset().values_list('group_name')
-
-    def unique(self):
-        return (t[0] for t in self.distinct())
+    def unique_groups(self):
+        return (t[0] for t in self.values_list('group_name').distinct())
 
 
 class Member(models.Model):
     name = models.CharField(max_length=256)
     group_name = models.CharField(max_length=256)
-    objects = models.Manager()  # preserve the default Manager
+    objects = MemberQuerySet.as_manager()
 
     def __str__(self):
         return '%s of %s' % (self.name, self.group_name)
-
-    # Method 1: create a manager to handle all group-related operation
-    groups = MemberGroupManager()
-
-    # Method 2: create a new method
-    @classmethod
-    def unique_groups(cls):
-        return (t[0] for t in cls.objects.values_list('group_name').distinct())
 
 
 class History(models.Model):
