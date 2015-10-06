@@ -5,7 +5,7 @@ from django.utils.timezone import now
 class MemberQuerySet(models.QuerySet):
 
     def unique_groups(self):
-        return (t[0] for t in self.values_list('group_name').distinct())
+        return self.values_list('group_name', flat=True).distinct()
 
 
 class Member(models.Model):
